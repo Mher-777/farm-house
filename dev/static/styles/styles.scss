@@ -1,0 +1,106 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+@import "utils/sprite";
+//@include sprites($spritesheet-sprites);
+
+html {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  color: var(--color-white);
+  font-weight: 500;
+}
+.main {
+  background: linear-gradient(135deg, #38234F, #261736, #150B1D);
+}
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select { font: inherit; }
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video,
+textarea { vertical-align: middle; }
+
+textarea { resize: none; }
+
+section { position: relative; }
+
+input,
+select,
+button { outline: none; }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content { flex: 1 0 auto; }
+
+.container {
+  margin: 0 auto;
+  max-width: $content;
+  width: 100%;
+}
+.container {
+  padding: 0 15px;
+  max-width: 1140px;
+}
+
+@media (max-width: 575.98px){
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 767.98px){
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 1199.98px){
+  .container {
+    max-width: 1140px;
+  }
+}
+//Модули
+@import "utils/reset";
+@import "modules/modules";

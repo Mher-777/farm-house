@@ -1,0 +1,15 @@
+{
+  "overrides": [
+    {
+      "files": [
+        "dev/static/**/*.js"
+      ],
+      "extends": [
+        "eslint:recommended"
+      ],
+      "rules": {
+        "rule-empty-line-before": "off"
+      }
+    }
+  ]
+}
