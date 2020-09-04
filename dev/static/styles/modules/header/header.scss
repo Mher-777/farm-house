@@ -1,6 +1,11 @@
 .header {
   flex: 0 0 auto;
   background-color: var(--color-bg);
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 998;
   &__inner {
     min-height: 72px;
     display: flex;
@@ -57,4 +62,58 @@
       }
     }
   }
+  &__auth {
+    display: flex;
+    align-items: center;
+    &-userpic {
+      max-width: 48px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+    &-link {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background-color: var(--color-grayish-purple);
+      border-radius: 50%;
+      transition: all linear .2s;
+      &::before {
+        content: attr(data-count);
+        position: absolute;
+        top: -3px;
+        right: 0;
+        min-width: 20px;
+        min-height: 20px;
+        white-space: nowrap;
+        border-radius: 50%;
+        background-color: var(--color-red);
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 20px;
+        color: var(--color-white);
+        text-align: center;
+      }
+      &:hover {
+        background-color: var(--color-red);
+      }
+    }
+    &-user {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+    }
+  }
+}
+.icon-envelope {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-white);
+}
+.icon-arrow-down {
+  width: 12px;
+  height: 8px;
+  fill: var(--color-white);
 }

@@ -64,6 +64,8 @@ button { outline: none; }
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
+  padding-top: 72px;
 }
 
 .content { flex: 1 0 auto; }
@@ -77,6 +79,7 @@ button { outline: none; }
   padding: 0 15px;
   max-width: 1140px;
 }
+
 
 @media (max-width: 575.98px){
   .container {

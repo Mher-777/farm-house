@@ -6,20 +6,24 @@ header.header
                     span.hamburger-inner
             nav.header__menu
                 ul.header__menu-list
-                    li.header__menu-item
+                    li.header__menu-item(data-da="menu__list, 0, 1050")
                         a(href="#").header__menu-link Главная
-                    li.header__menu-item
+                    li.header__menu-item(data-da="menu__list, 1, 1050")
                         a(href="#").header__menu-link Новости
-                    li.header__menu-item
+                    li.header__menu-item(data-da="menu__list, 2, 1050")
                         a(href="#").header__menu-link Инструкция
-                    li.header__menu-item
+                    li.header__menu-item(data-da="menu__list, 3, 1050")
                         a(href="#").header__menu-link FAQ
-                    li.header__menu-item
+                    li.header__menu-item(data-da="menu__list, 4, 1050")
                         a(href="#").header__menu-link Отзывы
-                    li.header__menu-item
-                        a(href="#").header__menu-link Главная
                     li.header__menu-item.header__menu-item--color-grayish-purple
                         a(href="#").header__menu-link.header__menu-link--size-small Благотворительность
             .header__group
                 a(href="#").header__group-link Войти
                 a(href="#").header__group-link Регистрация
+            //.header__auth
+            //    a(href="#" data-count="18").header__auth-link
+            //        +icon('envelope', 'header__auth-link-icon')
+            //    a(href="#").header__auth-user
+            //        img(src="static/images/common/logo-user.png").header__auth-userpic
+            //        +icon('arrow-down', 'header__auth-icon')

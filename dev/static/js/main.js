@@ -1,7 +1,13 @@
 $(function () {
     const menuSidebar = () => {
+        const menu = $('.menu')
         $('.hamburger').on('click', function () {
             $(this).toggleClass('is-active')
+            menu.toggleClass('menu--open')
+        })
+        $('.menu__icon').on('click', function () {
+            menu.removeClass('menu--open')
+            $('.hamburger').removeClass('is-active')
         })
     }
     const progressBar = () => {
@@ -36,6 +42,30 @@ $(function () {
         })
 
     }
+    const menuResize = () => {
+        const w = $(this).width()
+        if(w <= 1050) {
+            $('.header__menu-item[data-da]')
+                .removeClass('header__menu-item')
+                .addClass('menu__list-item')
+                .find('a')
+                .removeClass('header__menu-link')
+                .addClass('menu__list-link')
+            return false;
+        }else {
+            const item = $('.menu__list-item[data-da]')
+            item.removeClass('menu__list-item')
+                .addClass('header__menu-item')
+                .find('a')
+                .removeClass('menu__list-link')
+                .addClass('header__menu-link')
+            return false;
+        }
+    }
+    menuResize()
+    $(window).resize(function () {
+        menuResize()
+    })
     tabs()
     progressBar()
     menuSidebar()

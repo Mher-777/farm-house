@@ -15,6 +15,7 @@
     margin-right: 20px;
     position: relative;
     background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
     &::after {
       content: attr(data-level);
       position: absolute;
@@ -38,7 +39,7 @@
     display: block;
     font-weight: 600;
     font-size: 24px;
-    line-height: 24px;
+    line-height: 28px;
   }
   &__subtitle {
     margin-top: 3px;
