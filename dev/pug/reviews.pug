@@ -1,0 +1,15 @@
+extends layout/main
+
+block variables
+    -var title = 'Отзывы'
+
+block content
+    include modules/breadcrumbs
+    section.reviews
+        .container
+            .reviews__wrapper
+                .main-holder
+                    h2.title.reviews__title Отзывы
+                    a(href="#").main-holder__link.btn(data-da="reviews__wrapper, last, 500") Оставить отзыв
+                include pages/reviews/reviews
+                a(href="#").reviews__more.link.link--size-small Показать больше

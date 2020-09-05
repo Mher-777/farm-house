@@ -23,6 +23,15 @@
     }
   }
 }
+.main-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.js-review {
+  padding: 0;
+}
 @media (max-width: 840px) {
   .title {
     font-size: 40px;

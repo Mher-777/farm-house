@@ -1,13 +1,23 @@
 $(function () {
     const menuSidebar = () => {
         const menu = $('.menu')
-        $('.hamburger').on('click', function () {
+        $('.hamburger').on('click', function (e) {
+            e.stopPropagation();
             $(this).toggleClass('is-active')
             menu.toggleClass('menu--open')
         })
-        $('.menu__icon').on('click', function () {
+        $('.menu__icon').on('click', function (e) {
+            e.stopPropagation();
             menu.removeClass('menu--open')
             $('.hamburger').removeClass('is-active')
+        })
+        $(document ).on('click', function (e) {
+            let container = $('.menu')
+            const target = e.target
+            if(!container.is(target) && container.has(target).length === 0) {
+                menu.removeClass('menu--open')
+                $('.hamburger').removeClass('is-active')
+            }
         })
     }
     const progressBar = () => {
@@ -80,6 +90,22 @@ $(function () {
             }
         })
     }
+    const reviews = () => {
+        const w = $(window).width()
+        $(".js-review").rateYo({
+            normalFill: "transparent",
+            ratedFill: "#827C8F",
+            halfStar: true,
+            starWidth: (w > 860) ? "20px" : "15px",
+            spacing: (w > 860) ? "5px" : "3px",
+            "starSvg": `
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path stroke="#827C8F" stroke-width="2" fill-rule="evenodd" clip-rule="evenodd" d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+            </svg>
+        `,
+        });
+    }
+    reviews()
     accordion()
     tabs('.slider__footer-link', '.slider__footer-content', 'slider__footer-item--current', 'slider__footer-content--active')
     tabs('.instruction__list-link', '.instruction__content', 'instruction__list-item--current', 'instruction__content--active')
