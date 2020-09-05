@@ -1,0 +1,11 @@
+extends layout/main
+
+block variables
+    -var title = 'Инструкция'
+
+block content
+    include modules/breadcrumbs
+    section.instruction
+        .container.container--small
+            h2.title.instruction__title Инструкция
+            include pages/instruction/instruction

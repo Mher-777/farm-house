@@ -41,6 +41,11 @@
   &:hover {
     color: var(--color-red);
   }
+  &--color {
+    &-transparent {
+      background-color: transparent;
+    }
+  }
   &--size {
     &-small {
       font-weight: 600;

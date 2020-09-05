@@ -1,0 +1,70 @@
+.instruction {
+  padding-bottom: 115px;
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    margin-left: -15px;
+    &-item {
+      margin-left: 15px;
+      cursor: pointer;
+      border-radius: 44px;
+      margin-bottom: 15px;
+      &--current {
+        background-color: var(--color-grayish-purple);
+        cursor: auto;
+        .instruction__list-link {
+          cursor: context-menu;
+          color: var(--color-white);
+        }
+      }
+    }
+  }
+  &__prejudice {
+    margin-bottom: 45px;
+  }
+  &__content {
+    &-title {
+      margin-bottom: 15px;
+    }
+  }
+  &__text {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 28px;
+    margin-bottom: 40px;
+  }
+}
+.icon-warning {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-red);
+}
+@media (max-width: 600px) {
+  .instruction__list-item {
+    margin-left: 5px;
+  }
+  .instruction__list {
+    margin-left: -5px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+  .instruction__prejudice {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .instruction__list {
+    margin-left: 0;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    width: 100%;
+    overflow-x: auto;
+  }
+  .instruction__list-item {
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+}
