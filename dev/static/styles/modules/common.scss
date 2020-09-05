@@ -5,3 +5,26 @@
   color: var(--color-gray-neutral);
   display: block;
 }
+.title {
+  font-size: 48px;
+  line-height: 52px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: var(--color-white);
+  margin-left: -2px;
+}
+@media (max-width: 840px) {
+  .title {
+    font-size: 40px;
+    line-height: 44px;
+    margin-left: 0;
+    letter-spacing: -1px;
+  }
+}
+@media (max-width: 555px) {
+  .title {
+    font-size: 26px;
+    line-height: 30px;
+    letter-spacing: 0;
+  }
+}

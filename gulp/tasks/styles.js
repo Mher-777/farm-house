@@ -26,6 +26,6 @@ module.exports = function styles() {
       console.log(`${details.name}: Original size:${details.stats.originalSize} - Minified size: ${details.stats.minifiedSize}`)
     })))
     .pipe(gulpif(!argv.prod, sourcemaps.write()))
-    // .pipe(media())
+    .pipe(media())
     .pipe(gulp.dest('dist/static/css'))
 };

@@ -1,0 +1,12 @@
+extends layout/main
+
+block variables
+    -var title = 'Новости'
+
+block content
+    include modules/breadcrumbs
+    section.news
+        .container
+            h2.title.news__title Новости
+            include pages/news
+            a(href="#").news__more.link.link--size-small Показать больше

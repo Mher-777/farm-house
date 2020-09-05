@@ -1,0 +1,40 @@
+.breadcrumbs {
+  &__list {
+    display: flex;
+    align-items: center;
+    padding: 24px 0;
+    &-item {
+      line-height: 20px;
+      color: var(--color-white);
+      &:not(:first-child){
+        position: relative;
+        padding-left: 16px;
+        margin-left: 8px;
+        &::before {
+          content: '';
+          background-image: url(../images/common/arrow-right.svg);
+          width: 8px;
+          height: 12px;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    &-link {
+      opacity: .6;
+      transition: all linear .2s;
+      &:hover {
+        color: var(--color-red);
+      }
+    }
+  }
+}
+@media (max-width: 772px) {
+  .breadcrumbs {
+    &__list {
+      padding: 20px 0;
+    }
+  }
+}
