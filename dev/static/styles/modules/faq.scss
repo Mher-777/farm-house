@@ -1,0 +1,11 @@
+.faq {
+  padding-bottom: 115px;
+  &__accordion {
+    margin-top: 45px;
+  }
+}
+@media (max-width: 600px) {
+  .faq__accordion {
+    margin-top: 20px;
+  }
+}

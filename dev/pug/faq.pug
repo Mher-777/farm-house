@@ -1,0 +1,11 @@
+extends layout/main
+
+block variables
+    -var title = 'FAQ'
+
+block content
+    include modules/breadcrumbs
+    section.faq
+        .container.container--small
+            h2.title.faq__title FAQ
+            include pages/faq/faq
