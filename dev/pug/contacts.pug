@@ -1,0 +1,11 @@
+extends layout/main
+
+block variables
+    -var title = 'Контакты'
+
+block content
+    include modules/breadcrumbs
+    section.contacts
+        .container
+            h2.title.contacts__title Контакты
+            include pages/contacts/contacts

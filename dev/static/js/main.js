@@ -116,3 +116,7 @@ $(function () {
         menuResize()
     })
 })
+// document.onselectstart = noselect;
+// document.ondragstart = noselect;
+// document.oncontextmenu = noselect;
+// function noselect() {return false;}

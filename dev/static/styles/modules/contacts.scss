@@ -1,0 +1,102 @@
+.contacts {
+  padding-bottom: 115px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+  }
+  &__content {
+    max-width: 350px;
+    width: 100%;
+    margin-right: 15px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+    box-shadow: 0px 0px 1px rgba(24, 26, 59, 0.12), 0px 2px 4px -1px rgba(24, 26, 59, 0.12), 0px 8px 8px -4px rgba(24, 26, 59, 0.06);
+    border-radius: 24px;
+    padding: 30px;
+  }
+  &__list {
+    &-item {
+      display: block;
+      margin-bottom: 25px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &-link {
+      display: flex;
+      align-items: center;
+      &:hover {
+        color: var(--color-red);
+        .contacts__list-icon > svg {
+          fill: var(--color-red);
+        }
+      }
+    }
+    &-text {
+      transition: all linear .2s;
+      line-height: 24px;
+    }
+    &-icon {
+      background: rgba(255, 255, 255, 0.06);
+      flex-shrink: 0;
+      margin-right: 15px;
+      width: 48px;
+      height: 48px;
+      text-align: center;
+      line-height: 48px;
+      border-radius: 50%;
+      & > svg {
+        transition: all linear .2s;
+      }
+    }
+  }
+  &__map {
+    max-width: 730px;
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    &-iframe {
+      min-height: 255px;
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 900px) {
+  .contacts__content {
+    padding: 30px 20px;
+    max-width: 310px;
+  }
+}
+@media (max-width: 772px) {
+  .contacts__inner {
+    display: block;
+    margin-top: 40px;
+  }
+  .contacts__content {
+    margin-bottom: 25px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 440px){
+  .contacts__inner {
+    margin-top: 25px;
+  }
+  .contacts__content {
+    padding: 20px;
+  }
+  .contacts__list-item {
+    margin-bottom: 20px;
+  }
+  .contacts__map-iframe {
+    min-height: 225px;
+  }
+}
+@media (max-width: 340px){
+  .contacts__content {
+    padding: 20px 15px;
+  }
+  .contacts__list-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
