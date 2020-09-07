@@ -10,6 +10,7 @@
   color: var(--color-white);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
   &::before {
     content: "";
     position: absolute;
@@ -44,6 +45,9 @@
   &--color {
     &-transparent {
       background-color: transparent;
+    }
+    &-white {
+      color: var(--color-white);
     }
   }
   &--size {

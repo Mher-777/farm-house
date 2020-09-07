@@ -1,0 +1,27 @@
+block variables
+    -var breadcrumbsTitle = 'Техподдержка'
+    -var breadcrumbsItem = 'Тикет #416827 '
+.support__inner.support__inner--s-small
+    form(action="#").support__form.form
+        .form__top
+            .form__top-info
+                a(href="#").form__top-link
+                    +icon('arrow-right', 'form__top-icon')
+                .form__top-box
+                    span.form__top-title Тикет #416827
+                    span.form__top-subtitle.subtitle Тема вопроса
+            time(datetime="1/04/2019").form__top-day 1/04/2019
+        .form__content(data-simplebar)
+            p.form__text.form__text--align-right And blood-black nothingness began to spin... A system of cells
+            p.form__text.form__text--align-left.form__text--color-pink When you're not performing your duties
+            p.form__text.form__text--align-right And blood-black nothingness began to spin... A system of cells
+            p.form__text.form__text--align-left.form__text--color-pink When you're not performing your duties
+        .form__bottom
+            span.form__bottom-text Ваш вопрос решен?
+            .form__bottom-group
+                a(href="#").form__bottom-link.js-link.form__bottom-link--success.link.link--color-white
+                    +icon('like', 'form__bottom-link-icon')
+                    span.form__bottom-link-text Да, спасибо
+                a(href="#").form__bottom-link.js-link.form__bottom-link--error.link.link--color-white
+                    +icon('dislike', 'form__bottom-link-icon')
+                    span.form__bottom-link-text Нет, новый вопрос

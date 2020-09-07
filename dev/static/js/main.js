@@ -11,10 +11,10 @@ $(function () {
             menu.removeClass('menu--open')
             $('.hamburger').removeClass('is-active')
         })
-        $(document ).on('click', function (e) {
+        $(document).on('click', function (e) {
             let container = $('.menu')
             const target = e.target
-            if(!container.is(target) && container.has(target).length === 0) {
+            if (!container.is(target) && container.has(target).length === 0) {
                 menu.removeClass('menu--open')
                 $('.hamburger').removeClass('is-active')
             }
@@ -37,13 +37,13 @@ $(function () {
         content.first().show()
         link.on('click', function (e) {
             e.preventDefault()
-            if(!$(this).parent().hasClass($itemCurrent)) {
+            if (!$(this).parent().hasClass($itemCurrent)) {
                 const linkId = Number($(this).attr('data-id'))
                 link.parent().removeClass($itemCurrent)
                 $(this).parent().addClass($itemCurrent)
                 content.each(function () {
                     const contentId = Number($(this).attr('data-content-id'))
-                    if(linkId === contentId) {
+                    if (linkId === contentId) {
                         content.hide(600).removeClass($contentActive)
                         $(this).show(600).addClass($contentActive)
                     }
@@ -54,7 +54,7 @@ $(function () {
     }
     const menuResize = () => {
         const w = $(this).width()
-        if(w <= 1050) {
+        if (w <= 1050) {
             $('.header__menu-item[data-da]')
                 .removeClass('header__menu-item')
                 .addClass('menu__list-item')
@@ -62,7 +62,7 @@ $(function () {
                 .removeClass('header__menu-link')
                 .addClass('menu__list-link')
             return false;
-        }else {
+        } else {
             const item = $('.menu__list-item[data-da]')
             item.removeClass('menu__list-item')
                 .addClass('header__menu-item')
@@ -73,7 +73,7 @@ $(function () {
         }
     }
     const accordion = () => {
-        $('.js-accordion__toggle').on('click',  function(e) {
+        $('.js-accordion__toggle').on('click', function (e) {
             e.preventDefault();
             let $this = $(this);
             if ($this.next().hasClass('show')) {
@@ -105,6 +105,19 @@ $(function () {
         `,
         });
     }
+    const likeDislike = () => {
+        const elem = $('.js-link');
+        elem.on('click', function () {
+            if($(this).hasClass('form__bottom-link--success') && !elem.hasClass('form__bottom-link--selected-error')) {
+                $(this).addClass('form__bottom-link--selected-success')
+            }
+            else {
+                if($(this).hasClass('form__bottom-link--error') && !elem.hasClass('form__bottom-link--selected-success')) {
+                    $(this).addClass('form__bottom-link--selected-error')
+                }
+            }
+        })
+    }
     reviews()
     accordion()
     tabs('.slider__footer-link', '.slider__footer-content', 'slider__footer-item--current', 'slider__footer-content--active')
@@ -115,7 +128,13 @@ $(function () {
     $(window).resize(function () {
         menuResize()
     })
+    likeDislike()
 })
+function auto_grow(element) {
+    element.style.height = "5px";
+    element.style.height = (element.scrollHeight)+"px";
+}
+
 // document.onselectstart = noselect;
 // document.ondragstart = noselect;
 // document.oncontextmenu = noselect;

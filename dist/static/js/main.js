@@ -106,6 +106,19 @@ $(function () {
     });
   };
 
+  var likeDislike = function likeDislike() {
+    var elem = $('.js-link');
+    elem.on('click', function () {
+      if ($(this).hasClass('form__bottom-link--success') && !elem.hasClass('form__bottom-link--selected-error')) {
+        $(this).addClass('form__bottom-link--selected-success');
+      } else {
+        if ($(this).hasClass('form__bottom-link--error') && !elem.hasClass('form__bottom-link--selected-success')) {
+          $(this).addClass('form__bottom-link--selected-error');
+        }
+      }
+    });
+  };
+
   reviews();
   accordion();
   tabs('.slider__footer-link', '.slider__footer-content', 'slider__footer-item--current', 'slider__footer-content--active');
@@ -116,7 +129,13 @@ $(function () {
   $(window).resize(function () {
     menuResize();
   });
-}); // document.onselectstart = noselect;
+  likeDislike();
+});
+
+function auto_grow(element) {
+  element.style.height = "5px";
+  element.style.height = element.scrollHeight + "px";
+} // document.onselectstart = noselect;
 // document.ondragstart = noselect;
 // document.oncontextmenu = noselect;
 // function noselect() {return false;}

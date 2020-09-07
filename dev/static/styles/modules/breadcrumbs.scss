@@ -3,6 +3,9 @@
     display: flex;
     align-items: center;
     padding: 24px 0;
+    overflow-x: auto;
+    width: 100%;
+    white-space: nowrap;
     &-item {
       line-height: 20px;
       color: var(--color-white);

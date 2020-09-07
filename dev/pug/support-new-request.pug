@@ -1,0 +1,14 @@
+extends layout/main
+
+block variables
+    -var title = 'Техподдержка'
+    -var breadcrumbsItem = 'Новый запрос'
+block content
+    include modules/breadcrumbs
+    section.support
+        .container
+            .support__wrapper
+                .main-holder
+                    h2.title.support__title Техподдержка
+                    a(href="#" data-da="support__wrapper, last, 500").main-holder__link.btn Создать тикет
+                include pages/support/support-new-request

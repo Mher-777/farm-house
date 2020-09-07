@@ -1,0 +1,18 @@
+block variables
+    -var breadcrumbsTitle = 'Техподдержка'
+    -var breadcrumbsItem = 'Новый запрос'
+.support__inner.support__inner--s-small
+    form(action="#").support__form.form
+        .form__top
+            .form__top-info
+                a(href="#").form__top-link
+                    +icon('arrow-right', 'form__top-icon')
+                .form__top-box
+                    span.form__top-title.form__top-title--mobile-hide Новый запрос
+            input(type="text" placeholder="Тема вопроса" required).input.form__top-input
+            span.form__top-text.form__top-text--mobile-hide #4152723
+            time(datetime="1/04/2019").form__top-day.form__top-day--mobile-hide 1/04/2019
+        .form__content.form__content--empty(data-simplebar)
+        .form__bottom
+            textarea(placeholder="Ваш комментарий" oninput="auto_grow(this)").input.form__bottom-textarea
+            button(type="submit").form__bottom-btn.btn Создать тикет

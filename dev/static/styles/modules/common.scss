@@ -32,6 +32,17 @@
 .js-review {
   padding: 0;
 }
+.input {
+  display: block;
+  border: none;
+  background-color: transparent;
+  color: var(--color-white);
+}
+input {
+  &:focus::placeholder {
+    color: transparent;
+  }
+}
 @media (max-width: 840px) {
   .title {
     font-size: 40px;
