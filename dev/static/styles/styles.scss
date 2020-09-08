@@ -3,7 +3,7 @@
 @import "utils/mixins";
 @import "utils/fonts";
 @import "utils/sprite";
-//@include sprites($spritesheet-sprites);
+@include sprites($spritesheet-sprites);
 
 html {
   font-family: 'Montserrat', Arial, sans-serif;
@@ -60,7 +60,10 @@ section { position: relative; }
 input,
 select,
 button { outline: none; }
-
+figure {
+  margin: 0;
+  display: block;
+}
 .wrapper {
   display: flex;
   flex-direction: column;

@@ -1,3 +1,45 @@
+$(window).on('load', function () {
+    const body = $('body')
+    const scroll = calcScroll();
+    const header = $('.header')
+    body.css({
+        'marginRight': scroll +'px',
+        'position': 'relative',
+    })
+    header.css({
+        'transform': 'translateX(-' + scroll + 'px' + ')',
+        'padding-left': scroll +'px',
+    })
+    setTimeout(function () {
+        $('.preloader__wrapper').fadeOut(500, function () {
+            $(this).remove()
+            if(body.hasClass('hidden')){
+                body.css({
+                    'marginRight': 0 +'px',
+                    'position': '',
+                })
+                header.css({
+                    'transform': '',
+                    'padding-left': '',
+                })
+                body.delay(400).removeClass('hidden')
+            }
+        })
+    }, 500)
+})
+function calcScroll () {
+    let div = document.createElement('div')
+    div.style.width = '50px';
+    div.style.height = '50px';
+    div.style.overflowY = 'scroll';
+    div.style.visibility = 'hidden';
+
+    document.body.appendChild(div);
+    let scrollWidth = div.offsetWidth - div.clientWidth;
+    div.remove();
+
+    return scrollWidth;
+}
 $(function () {
     const menuSidebar = () => {
         const menu = $('.menu')

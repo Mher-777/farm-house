@@ -1,5 +1,48 @@
 "use strict";
 
+$(window).on('load', function () {
+  var body = $('body');
+  var scroll = calcScroll();
+  var header = $('.header');
+  body.css({
+    'marginRight': scroll + 'px',
+    'position': 'relative'
+  });
+  header.css({
+    'transform': 'translateX(-' + scroll + 'px' + ')',
+    'padding-left': scroll + 'px'
+  });
+  setTimeout(function () {
+    $('.preloader__wrapper').fadeOut(500, function () {
+      $(this).remove();
+
+      if (body.hasClass('hidden')) {
+        body.css({
+          'marginRight': 0 + 'px',
+          'position': ''
+        });
+        header.css({
+          'transform': '',
+          'padding-left': ''
+        });
+        body.delay(400).removeClass('hidden');
+      }
+    });
+  }, 500);
+});
+
+function calcScroll() {
+  var div = document.createElement('div');
+  div.style.width = '50px';
+  div.style.height = '50px';
+  div.style.overflowY = 'scroll';
+  div.style.visibility = 'hidden';
+  document.body.appendChild(div);
+  var scrollWidth = div.offsetWidth - div.clientWidth;
+  div.remove();
+  return scrollWidth;
+}
+
 $(function () {
   var _this = this;
 

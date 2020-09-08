@@ -1,0 +1,16 @@
+extends layout/main
+
+block variables
+    -var title = 'A Blood Black Began to Spin, Let’s Move'
+    -var breadcrumbsItem = 'A Blood Black Began to Spin, Let’s Move'
+block content
+    include modules/breadcrumbs
+    section.blog
+        .container
+            h2.title.blog__title A Blood Black Began to Spin, Let’s Move
+            .blog__info
+                span.blog__info-subtitle.subtitle.subtitle--transform-uppercase baseline test
+                time(datetime="Jun 19").blog__info-day Jun 19
+        .blog__bg(style="background-image: url(static/images/content/blog/blog-bg.jpg)")
+        .container.container--small
+            include pages/blog

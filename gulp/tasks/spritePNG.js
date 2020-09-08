@@ -7,7 +7,7 @@ const spritesmith = require('gulp.spritesmith');
 
 module.exports = function spritePNG() {
   // Генерируем спрайт
-  const spriteData = gulp.src('dev/static/images/sprite/png/*.png').pipe(spritesmith({
+  const spriteData = gulp.src('dev/static/images/sprite/png/*.{png,svg}').pipe(spritesmith({
     imgName: 'sprite.png',
     imgPath: '../images/sprite/sprite.png',
     cssName: 'sprite.scss',
