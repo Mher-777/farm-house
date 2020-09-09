@@ -7,6 +7,7 @@ const vendorsScripts = [
   'dev/static/js/vendor/dynamic_adapt.js',
   'dev/static/js/vendor/rateyo.js',
   'node_modules/simplebar/dist/simplebar.js',
+  'node_modules/chart.js/dist/Chart.js',
 ];
 
 module.exports = function vendors(cb) {

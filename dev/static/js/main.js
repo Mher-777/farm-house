@@ -172,11 +172,261 @@ $(function () {
     })
     likeDislike()
 })
-function auto_grow(element) {
-    element.style.height = "5px";
-    element.style.height = (element.scrollHeight)+"px";
-}
+const lineChart = () => {
+    let ctx = document.getElementById('line-chart')
+    if(ctx) {
+        ctx = document.getElementById('line-chart').getContext('2d');
+        let labels = $('#line-chart').attr('data-labels')
+        let date = $('#line-chart').attr('data-statistics')
+        labels = JSON.parse(`[  ${labels}  ]`);
+        date = JSON.parse(`[  ${date}  ]`);
+        Chart.defaults.global.animation.duration = 3000
+        var gradient = ctx.createLinearGradient(0, 0, 0, 500);
+        gradient.addColorStop(0, '#FF005B');
+        gradient.addColorStop(.5, 'rgba(184, 22, 129, 0.4)');
+        gradient.addColorStop(1, 'rgba(109, 51, 143, 0.24)');
+        Chart.defaults.global.legend.display = false
+        Chart.defaults.global.legend.align = 'end';
+        Chart.defaults.global.elements.point.borderWidth = 0;
+        Chart.defaults.global.elements.point.borderColor = '#FF005B';
+        Chart.defaults.global.elements.point.hoverBackgroundColor = '#fff';
+        Chart.defaults.global.elements.point.radius = 0;
+        Chart.defaults.global.elements.point.hoverRadius = 8;
+        Chart.defaults.global.elements.point.hoverBorderWidth = 8;
+        var data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: false,
+                    backgroundColor: gradient,
+                    data: date,
+                    pointStyle: 'circle',
+                }
+            ]
+        };
 
+        var options = {
+            maintainAspectRatio: false,
+            tooltipFillColor: "rgba(0,0,0,0.8)",
+            legendCallback: function (chart) {
+                console.log(chart)
+            },
+
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        display: false
+                    },
+                    gridLines: {
+                        display: false,
+                        lineWidth: 3,
+                        color: "rgba(0, 0, 0, 0)",
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        display: false
+                    },
+                    gridLines: {
+                        display: false,
+                        lineWidth: 3,
+                        color: "rgba(0, 0, 0, 0)",
+                    }
+                }]
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: false
+            },
+            tooltips: {
+                mode: 'nearest',
+                intersect: false,
+                displayColors: false,
+                backgroundColor: '#422E57',
+                bodyFontSize: 16,
+                callbacks: {
+                    title: function (tooltipItem, data) {
+                        function setDate(data) {
+                            const date = new Date(data.event_details.event_start_date);
+                            return date.toLocaleDateString("ru-Ru", {month: 'short'}) + ' ' + tooltipItem[0].label;
+                        }
+
+                        return setDate({event_details: {event_start_date: Date.now()}});
+                    },
+                    label: function (tooltipItem) {
+                        return tooltipItem.value.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ',');
+                    },
+                    labelTextColor: function (tooltipItem, chart) {
+                        return '#fff';
+                    },
+                },
+            },
+        };
+        new Chart(ctx, {
+            type: 'line',
+            responsive: true,
+            data: data,
+            options: options,
+        });
+    }
+}
+const barChart = () => {
+    let ctx = document.getElementById('bar-chart')
+    if(ctx) {
+        let date = $('#bar-chart').attr('data-factory')
+        date = JSON.parse(`[  ${date}  ]`);
+        ctx = document.getElementById('bar-chart').getContext('2d');
+        Chart.defaults.global.animation.duration = 3000
+        var backgroundBlue = ctx.createLinearGradient(0, 0, 0, 222);
+        backgroundBlue.addColorStop(0, '#00FFAA');
+        backgroundBlue.addColorStop(.5, '#00BBFF');
+        backgroundBlue.addColorStop(1, '#4579F5');
+
+        var backgroundRed = ctx.createLinearGradient(0, 0, 0, 166);
+        backgroundRed.addColorStop(0, '#6D338F');
+        backgroundRed.addColorStop(.5, '#B81681');
+        backgroundRed.addColorStop(1, '#FF005B');
+
+        var backgroundYellow = ctx.createLinearGradient(0, 0, 0, 111);
+        backgroundYellow.addColorStop(0, '#FF8800');
+        backgroundYellow.addColorStop(.5, '#FFAA00');
+        backgroundYellow.addColorStop(1, '#EEFF00');
+
+        var backgroundGreen = ctx.createLinearGradient(0, 0, 0, 97);
+        backgroundGreen.addColorStop(0, '#00858F');
+        backgroundGreen.addColorStop(.5, '#16B862');
+        backgroundGreen.addColorStop(1, '#66FF00');
+        new Chart(ctx, {
+            type: 'bar',
+            responsive: true,
+            data: {
+                labels: ['Blue','Red','Yellow','Green'],
+                datasets: [
+                    {
+                        borderWidth: 0,
+                        backgroundColor: [backgroundBlue, backgroundRed, backgroundYellow, backgroundGreen],
+                        data: date
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            display: false
+                        },
+                        maxBarThickness: 48,
+                        gridLines: {
+                            display: false,
+                            lineWidth: 3,
+                            color: "rgba(0, 0, 0, 0)",
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            display: false
+                        },
+                        gridLines: {
+                            display: false,
+                            lineWidth: 3,
+                            color: "rgba(0, 0, 0, 0)",
+                        }
+                    }]
+                },
+                tooltips: {
+                    enabled: false
+                },
+
+            },
+
+        });
+    }
+}
+const doughnutChart = (elem, data, labels) => {
+    let ctx = document.getElementById(elem)
+    if(ctx) {
+        ctx = document.getElementById(elem).getContext('2d');
+        let date = $('#' + elem).attr(data)
+        date = JSON.parse(`[  ${date}  ]`);
+        let dataLabels = $('#' + elem).attr(labels)
+        dataLabels = dataLabels.split(',');
+        Chart.defaults.global.animation.duration = 3000
+        var backgroundBlue = ctx.createLinearGradient(0, 0, 0, 222);
+        backgroundBlue.addColorStop(0, '#00FFAA');
+        backgroundBlue.addColorStop(.5, '#00BBFF');
+        backgroundBlue.addColorStop(1, '#4579F5');
+
+        var backgroundRed = ctx.createLinearGradient(0, 0, 0, 166);
+        backgroundRed.addColorStop(0, '#6D338F');
+        backgroundRed.addColorStop(.5, '#B81681');
+        backgroundRed.addColorStop(1, '#FF005B');
+
+        var backgroundYellow = ctx.createLinearGradient(0, 0, 0, 111);
+        backgroundYellow.addColorStop(0, '#FF8800');
+        backgroundYellow.addColorStop(.5, '#FFAA00');
+        backgroundYellow.addColorStop(1, '#EEFF00');
+
+        var backgroundGreen = ctx.createLinearGradient(0, 0, 0, 97);
+        backgroundGreen.addColorStop(0, '#00858F');
+        backgroundGreen.addColorStop(.5, '#16B862');
+        backgroundGreen.addColorStop(1, '#66FF00');
+
+        var backgroundViolet = ctx.createLinearGradient(0, 0, 0, 97);
+        backgroundViolet.addColorStop(0, '#CC00FF');
+        backgroundViolet.addColorStop(.5, '#8A45F5');
+        backgroundViolet.addColorStop(1, '#5D2DE1');
+        new Chart(ctx, {
+            type: 'doughnut',
+            responsive: true,
+            data: {
+                labels: dataLabels,
+                datasets: [
+                    {
+                        borderWidth: 0,
+                        backgroundColor: [backgroundBlue, backgroundRed, backgroundYellow, backgroundGreen, backgroundViolet],
+                        data: date
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            display: false
+                        },
+                        maxBarThickness: 48,
+                        gridLines: {
+                            display: false,
+                            lineWidth: 3,
+                            color: "rgba(0, 0, 0, 0)",
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            display: false
+                        },
+                        gridLines: {
+                            display: false,
+                            lineWidth: 3,
+                            color: "rgba(0, 0, 0, 0)",
+                        }
+                    }]
+                },
+                tooltips: {
+                    // enabled: false
+                },
+
+            },
+        });
+    }
+}
+lineChart()
+barChart()
+doughnutChart('doughnut-chart-corrals', 'data-corrals', 'data-labels')
+doughnutChart('doughnut-chart-plant', 'data-plant', 'data-labels')
+doughnutChart('doughnut-chart-bakeries', 'data-bakeries', 'data-labels')
 // document.onselectstart = noselect;
 // document.ondragstart = noselect;
 // document.oncontextmenu = noselect;

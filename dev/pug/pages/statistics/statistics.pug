@@ -1,0 +1,105 @@
+block variables
+    -var breadcrumbsTitle = 'Статистика'
+.statistics__inner
+    .statistics__col.statistics__col--s-big
+        span.statistics__col-title.statistics__col-title--p-absolute  Новые пользователи за последний месяц
+        span.statistics__col-subtitle.subtitle.subtitle--size-small 40,548
+        canvas(data-labels='1,2,3,4,5,6,7,8,\n' +
+        '            9,10,11,12,13,14,15,16,\n' +
+        '            17,18,19,20,21,22,23,24,25,\n' +
+        '            26,27,28,29,30'
+            data-statistics='10000, 11000, 12000, 14000, 12000, 13000, 15000,\n' +
+        '   11000, 10500, 10500, 13000, 14000, 14500, 15000,\n' +
+        '   20000, 25000, 29000, 30000, 31000, 30500, 33000, 35000,\n' +
+        '   37356, 38000, 40000, 40582, 38000, 39000, 32000, 33000')#line-chart
+    .statistics__col
+        span.statistics__col-title Куплено животных
+        .statistics__col-box
+            canvas(data-factory="12637,11078,10034,5707")#bar-chart
+        ul.statistics__col-list
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-blue
+                span.statistics__col-text Фабрика теста
+                span.statistics__col-insert 41.3%
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-red
+                span.statistics__col-text Фабрика фарша
+                span.statistics__col-insert 27.3%
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-yellow
+                span.statistics__col-text Фабрика сыра
+                span.statistics__col-insert 19.8%
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-green
+                span.statistics__col-text Фабрика творога
+                span.statistics__col-insert 11.6%
+    .statistics__col
+        span.statistics__col-title Куплено загонов
+        .statistics__col-box.statistics__col-box--margin
+            canvas(data-corrals="30394,5843,2962,1542,1095"
+                data-labels="Полей, Загонов кур, Загонов бычков, Загонов коров, Загонов коз")#doughnut-chart-corrals
+        ul.statistics__col-list
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-blue
+                span.statistics__col-text Полей
+                span.statistics__col-insert 74.9%
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-red
+                span.statistics__col-text Загонов кур
+                span.statistics__col-insert 11.4%
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-yellow
+                span.statistics__col-text Загонов бычков
+                span.statistics__col-insert 7.3%
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-green
+                span.statistics__col-text Загонов коров
+                span.statistics__col-insert 3.8%
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-violet
+                span.statistics__col-text Загонов коз
+                span.statistics__col-insert 2.7%
+    .statistics__col
+        span.statistics__col-title Куплено фабрик
+        .statistics__col-box.statistics__col-box--margin
+            canvas(data-plant="16759,11078,8034,4707"
+                data-labels="Фабрика теста, Фабрика фарша, Фабрика сыра, Фабрика творога")#doughnut-chart-plant
+        ul.statistics__col-list
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-blue
+                span.statistics__col-text Полей
+                span.statistics__col-insert 74.9%
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-red
+                span.statistics__col-text Загонов кур
+                span.statistics__col-insert 11.4%
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-yellow
+                span.statistics__col-text Загонов бычков
+                span.statistics__col-insert 7.3%
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-green
+                span.statistics__col-text Загонов коров
+                span.statistics__col-insert 3.8%
+    .statistics__col
+        span.statistics__col-title Куплено фабрик
+        .statistics__col-box.statistics__col-box--margin
+            canvas(data-bakeries="22562,10753,7263"
+                data-labels="Полей, Загонов кур, Загонов бычков")#doughnut-chart-bakeries
+        ul.statistics__col-list
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-blue
+                span.statistics__col-text Полей
+                span.statistics__col-insert 74.9%
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-red
+                span.statistics__col-text Загонов кур
+                span.statistics__col-insert 11.4%
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-yellow
+                span.statistics__col-text Загонов бычков
+                span.statistics__col-insert 7.3%
+            li.statistics__col-item
+                span.statistics__col-ellipse.statistics__col-ellipse--color-green
+                span.statistics__col-text Загонов коров
+                span.statistics__col-insert 3.8%

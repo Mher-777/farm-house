@@ -9,6 +9,12 @@
       text-transform: uppercase;
     }
   }
+  &--size {
+    &-small {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
 }
 .title {
   font-size: 48px;

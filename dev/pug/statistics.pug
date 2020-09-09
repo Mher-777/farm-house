@@ -1,0 +1,10 @@
+extends layout/main
+
+block variables
+    -var title = 'Статистика'
+block content
+    include modules/breadcrumbs
+    section.statistics
+        .container
+            h2.title.statistics__title Статистика
+            include pages/statistics/statistics
