@@ -4,17 +4,17 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 45px;
-    justify-content: space-between;
+    margin-left: -30px;
   }
   &__col {
     position: relative;
-    width: calc(34.25% - 30px);
+    width: calc(33.333334% - 30px);
+    margin-left: 30px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.0001) 98.53%);
     box-shadow: 0px 0px 1px rgba(24, 26, 59, 0.12), 0px 2px 4px -1px rgba(24, 26, 59, 0.12), 0px 8px 8px -4px rgba(24, 26, 59, 0.06);
     border-radius: 24px;
     display: flex;
     flex-direction: column;
-    min-height: 530px;
     padding: 25px;
     margin-bottom: 30px;
     canvas {
@@ -31,7 +31,7 @@
     }
     &--s {
       &-big {
-        width: calc(100% - 380px);
+        width: calc(66.66% - 30px);
         padding: 0;
         overflow: hidden;
         canvas {
@@ -129,8 +129,94 @@
     }
   }
 }
-@media (max-width: 1150px) {
+@media (max-width: 972px) {
+  .statistics__col {
+    margin-left: 15px;
+    width: calc(33.333334% - 15px);
+    &--s {
+      &-big {
+        width: calc(66.66% - 15px);
+      }
+    }
+  }
+  .statistics__inner {
+    margin-left: -15px;
+  }
+  .statistics__col-title--p-absolute {
+    padding-right: 109px;
+  }
+}
+@media (max-width: 860px) {
+  .statistics__col {
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    margin-left: 20px;
+    &:nth-child(2) {
+      order: 1;
+    }
+  }
   .statistics__col--s-big {
-    width: 66.1%;
+    width: calc(100% - 20px);
+    min-height: 360px;
+  }
+}
+@media (max-width: 600px) {
+  .statistics__col {
+    padding: 15px;
+  }
+  .statistics__col--s-big {
+    padding: 0;
+  }
+  .statistics__col-title {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .statistics__col-title--p-absolute {
+    top: 15px;
+    left: 20px;
+  }
+  .statistics__col-subtitle {
+    top: 15px;
+    right: 20px;
+  }
+}
+@media (max-width: 555px) {
+  .statistics__inner {
+    display: block;
+    margin-left: 0;
+    margin-top: 25px;
+  }
+  .statistics__col {
+    margin-left: 0;
+    width: 100%;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .statistics__col-box {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+@media (max-width: 430px) {
+  .statistics__col--s-big {
+    min-height: 250px;
+  }
+  .subtitle--size-small {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .statistics__col-title {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+@media (max-width: 375px) {
+  .statistics__col-title--p-absolute {
+    padding-right: 80px;
+  }
+  .statistics__col-title {
+    font-size: 15px;
+    line-height: 17px;
   }
 }
