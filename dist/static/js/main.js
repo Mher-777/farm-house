@@ -171,9 +171,19 @@ $(function () {
     });
   };
 
-  tippy('[data-tippy-content]', {
-    allowHTML: true
-  });
+  var tooltip = function tooltip() {
+    tippy('[data-tippy-content]', {
+      allowHTML: true
+    });
+  };
+
+  var customSelect = function customSelect() {
+    $('.select').select2({
+      minimumResultsForSearch: -1,
+      width: null
+    });
+  };
+
   reviews();
   accordion();
   tabs('.slider__footer-link', '.slider__footer-content', 'slider__footer-item--current', 'slider__footer-content--active');
@@ -185,6 +195,8 @@ $(function () {
     menuResize();
   });
   likeDislike();
+  tooltip();
+  customSelect();
   dataLink('.table__body-row--link', 'data-href');
 });
 

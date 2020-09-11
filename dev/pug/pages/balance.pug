@@ -1,0 +1,62 @@
+.balance__inner
+    .balance__col.box
+        form(action="#").box__form
+            .box__top
+                h3.box__title Пополнить
+                span.info-icon(data-tippy-content="<span class='tooltip tooltip--width'>Для пополнения баланса доступно пять платёжных систем. С&nbsp;их помощью, Вы можете пополнить ваш баланс с&nbsp;разных платёжных систем: QiWi, Яндекс.Деньги, WebMoney, Perfect Money, Payeer, VISA, MasterCard, МТС, Мегафон, Билайн, Сбербанк, Альфа-Банк, Bitcoin, Ooopay и&nbsp;другие. После оплаты, сумма будет добавлена к&nbsp;вашему балансу автоматически.</span>")
+                    +icon('info')
+            .box__main
+                input(type="text" placeholder="Сумма для перевода" required).box__input.input
+                select(data-placeholder="Тип кошелька").select.box__select
+                    option(value="") Тип кошелька
+                    option(value="1") QIWI
+                    option(value="2") Payeer
+                    option(value="3") freekassa.com
+                    option(value="4") Ynadex.Деньги
+                    option(value="5") mykassa
+            .box__bottom
+                button(type="submit").box__btn.link.link--color-white Пополнить
+    .balance__col.box
+        form(action="#").box__form
+            .box__top
+                h3.box__title Вывести
+                span.info-icon(data-tippy-content="<span class='tooltip tooltip--width'>Внимание! При заказе выплат на&nbsp;Qiwi указывайте свой кошелёк верно! В&nbsp;формате +ХХХХХХХХХХ, не&nbsp;нужно просто печатать свой номер телефона! Выплаты с&nbsp;несоответствующими номерами будут отменены. При отмене деньги вернутся на&nbsp;баланс для оплаты.\n" +
+                "                Перевод средств доступен только после активации платежного пароля (Платежный пароль будет активен только через&nbsp;7 дней после смены платежного пароля)</span>")
+                    +icon('info')
+            .box__main
+                input(type="text" placeholder="Сумма для вывода" required).box__input.input
+                select.select.box__select
+                    option(value="") Тип кошелька
+                    option(value="1") QIWI
+                    option(value="2") Payeer
+                    option(value="3") freekassa.com
+                    option(value="4") Ynadex.Деньги
+                    option(value="5") mykassa
+                input(type="text" placeholder="Кошелек" required).box__input.input
+                input(type="text" placeholder="Платежный пароль" required).box__input.input
+            .box__bottom
+                button(type="submit").box__btn.link.link--color-white Вывести
+    .balance__col.box
+        form(action="#").box__form
+            .box__top
+                h3.box__title Перевести
+                span.info-icon(data-tippy-content="<span class='tooltip'>Перевод средств доступен только после активации платежного пароля (Платежный пароль будет активен только через 7&nbsp;дней после смены платежного пароля).</span>")
+                    +icon('info')
+            .box__main
+                input(type="text" placeholder="Пользователь" required).box__input.input
+                input(type="text" placeholder="Сумма" required).box__input.input
+                input(type="text" placeholder="Платежный пароль" required).box__input.input
+            .box__bottom
+                button(type="submit").box__btn.link.link--color-white Пополнить
+    .balance__col.box
+        form(action="#").box__form
+            .box__top
+                h3.box__title Обменять
+                span.info-icon(data-tippy-content="<span class='tooltip'>Обменять денежные средства с&nbsp;баланса для&nbsp;вывода на&nbsp;баланс для&nbsp;оплаты.<br> \n" +
+                "                Комиссия системы за&nbsp;обмен составляет&nbsp;0%.\n" +
+                "                </span>")
+                    +icon('info')
+            .box__main
+                input(type="text" placeholder="Сумма" required).box__input.input
+            .box__bottom
+                button(type="submit").box__btn.link.link--color-white Пополнить

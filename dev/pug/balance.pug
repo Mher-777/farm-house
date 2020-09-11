@@ -1,0 +1,10 @@
+extends layout/office
+
+block variables
+    -var title = 'Баланс'
+block content
+    section.balance.office-section
+        .container
+            h2.title.title--size-medium.balance__title Баланс
+                span.balance__number(data-currencies=" р.") 49 580
+            include pages/balance
