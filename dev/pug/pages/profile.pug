@@ -1,0 +1,68 @@
+block variables
+    -var userInfo = 'profile__col'
+.profile__inner
+    include ../modules/user-info
+    .profile__col.box
+        form(action="#").box__form
+            .box__top
+                h3.box__title Личные данные
+                span.info-icon(data-tippy-content="<span class='tooltip  tooltip--width'>В целях безопасности личного кабинета, почта пользователей не подлежит изменению. Для смены почты необходимо создать тикет в тех. поддержку. Ваш запрос будет удовлетворён в течении 3-х дней, после проверки на предмет мошенничества.</span>")
+                    +icon('info')
+            .box__main
+                ul.box__list
+                    li.box__list-item
+                        span.box__list-subtitle.subtitle Email
+                        span.box__list-text hello@roob.in
+                    li.box__list-item
+                        span.box__list-subtitle.subtitle Пол
+                        .box__list-group
+                            input(type="radio" name="gender" checked).box__list-radio#men
+                            label.box__list-btn(data-text="М" for="men")
+                            input(type="radio" name="gender").box__list-radio#women
+                            label.box__list-btn(data-text="Ж" for="women")
+                    li.box__list-item
+                        span.box__list-subtitle.subtitle Получать новости на email
+                        input(type="checkbox").box__list-switch#switch
+                        label.box__list-checkbox(for="switch")
+            .box__bottom
+                button(type="submit").box__btn.link.link--color-white Сохранить
+    .profile__col.box
+        form(action="#").box__form
+            .box__top
+                h3.box__title Сменить пароль
+            .box__main
+                input(type="password" placeholder="Старый пароль" required).box__input.input
+                input(type="password" placeholder="Новый пароль" required).box__input.input
+                input(type="password" placeholder="Подтвердите пароль" required).box__input.input
+            .box__bottom
+                button(type="submit").box__btn.link.link--color-white Сохранить
+    .profile__col.box
+        .box__top
+            h3.box__title Основные данные
+        .box__main
+            ul.box__list
+                li.box__list-item
+                    span.box__list-subtitle.subtitle Регистрация
+                    span.box__list-text 2019-05-28 09:16:50
+                li.box__list-item
+                    span.box__list-subtitle.subtitle Последний вход
+                    span.box__list-text 2019-06-29 03:27:54
+                li.box__list-item
+                    span.box__list-subtitle.subtitle IP регистрации
+                    span.box__list-text 91.234.78.218
+                li.box__list-item
+                    span.box__list-subtitle.subtitle Последний IP
+                    span.box__list-text 93.75.62.252
+                li.box__list-item
+                    span.box__list-subtitle.subtitle Текуший IP
+                    span.box__list-text 94.228.207.147
+                li.box__list-item
+                    span.box__list-subtitle.subtitle Ваша страна
+                    span.box__list-text Россия
+    .profile__col.box
+        .box__top
+            h3.box__title Платежный пароль
+            span.info-icon(data-tippy-content="<span class='tooltip'>Для смены почты необходимо создать тикет в тех. поддержку. Ваш запрос будет удовлетворён в течении 3-х дней, после проверки на предмет мошенничества.</span>")
+                +icon('info')
+        .box__bottom
+            a(href="#").box__btn.link.link--color-white.box__btn--width Восстановить платежный пароль

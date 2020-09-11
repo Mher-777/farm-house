@@ -1,0 +1,11 @@
+extends layout/main
+
+block variables
+    -var title = 'Топ 100'
+
+block content
+    include modules/breadcrumbs
+    section.best
+        .container
+            h2.title.best__title Топ 100
+            include pages/top-100

@@ -160,6 +160,17 @@ $(function () {
             }
         })
     }
+    const dataLink = (elem, attr) => {
+        $(elem).each(function () {
+            const attrLink = $(this).attr(attr);
+            $(this).on('click', function () {
+                window.open(attrLink)
+            })
+        })
+    }
+    tippy('[data-tippy-content]', {
+        allowHTML: true,
+    });
     reviews()
     accordion()
     tabs('.slider__footer-link', '.slider__footer-content', 'slider__footer-item--current', 'slider__footer-content--active')
@@ -171,6 +182,7 @@ $(function () {
         menuResize()
     })
     likeDislike()
+    dataLink('.table__body-row--link', 'data-href')
 })
 const lineChart = () => {
     let ctx = document.getElementById('line-chart')

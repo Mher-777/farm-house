@@ -1,0 +1,92 @@
+.box {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.0001) 98.53%);
+  box-shadow: 0px 0px 1px rgba(24, 26, 59, 0.12), 0px 2px 4px -1px rgba(24, 26, 59, 0.12), 0px 8px 8px -4px rgba(24, 26, 59, 0.06);
+  border-radius: 24px;
+  padding: 25px;
+  max-width: 350px;
+  width: 100%;
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+    margin-right: 5px;
+  }
+  &__list {
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 50px;
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &-subtitle {
+      font-size: 13px;
+    }
+    &-group {
+      width: 105px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  &__input {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.06);
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+  &__btn {
+    &--width {
+      width: 100%;
+    }
+  }
+  &__bottom {
+    margin-top: 20px;
+  }
+}
+.icon-info {
+  width: 20px;
+  height: 20px;
+  fill: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+@media (max-width: 1100px) {
+  .box {
+    padding: 20px;
+  }
+}
+@media (max-width: 690px) {
+  .box__list-item {
+    min-height: 40px;
+  }
+  .box__top {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 380px) {
+ .box__list-text {
+   font-size: 14px;
+   line-height: 15px;
+ }
+  .box__list-subtitle {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .box {
+    padding: 20px 15px;
+  }
+  .box__btn {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

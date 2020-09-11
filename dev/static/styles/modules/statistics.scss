@@ -179,6 +179,10 @@
     top: 15px;
     right: 20px;
   }
+  .statistics__col-box {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 @media (max-width: 555px) {
   .statistics__inner {

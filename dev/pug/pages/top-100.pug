@@ -1,0 +1,49 @@
+block variables
+    -var breadcrumbsTitle = 'Топ 100'
+.best__inner
+    table.best__table.table
+        thead.table__head
+            tr.table__head-row
+                td.table__head-title
+                    span.table__head-text
+                td.table__head-title
+                    span.table__head-text
+                td.table__head-title
+                    span.table__head-text Фермер
+                td.table__head-title
+                    span.table__head-text.table__head-text--align-right Уровень
+        tbody.table__body
+            - var n = 1;
+            while n <= 7
+                tr.table__body-row.table__body-row--link.table__body-row--nowrap(data-href="https://vk.com/im")
+                    td.table__body-col
+                        span.table__body-number= n++
+                    td.table__body-col
+                        img(src="static/images/common/user-1.png").table__body-pic
+                    td.table__body-col
+                        span.table__body-text Mariano Rasgado
+                    td.table__body-col
+                        span.table__body-number.table__body-number--align-right.table__body-number--color-gray 55
+    table.best__table.table
+        thead.table__head
+            tr.table__head-row
+                td.table__head-title
+                    span.table__head-text
+                td.table__head-title
+                    span.table__head-text
+                td.table__head-title
+                    span.table__head-text Фермер
+                td.table__head-title
+                    span.table__head-text.table__head-text--align-right Уровень
+        tbody.table__body
+            - var n = 8;
+            while n <= 14
+                tr.table__body-row.table__body-row--link.table__body-row--nowrap(data-href="https://vk.com/im")
+                    td.table__body-col
+                        span.table__body-number= n++
+                    td.table__body-col
+                        img(src="static/images/common/user-1.png").table__body-pic
+                    td.table__body-col
+                        span.table__body-text Mariano Rasgado
+                    td.table__body-col
+                        span.table__body-number.table__body-number--align-right.table__body-number--color-gray 55
