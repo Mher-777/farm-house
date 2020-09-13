@@ -151,6 +151,36 @@
   height: 18px;
   fill: var(--color-white);
 }
+.icon-upload {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-white);
+}
+.icon-file {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-white);
+}
+.icon-heart-1,
+.icon-heart-2{
+  width: 20px;
+  height: 20px;
+  fill: var(--color-white);
+}
+.icon-delete {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-white);
+}
+.icon-comment {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-white);
+}
+.icon-close {
+  width: 8px;
+  height: 8px;
+}
 @media (max-width: 1250px) {
   .header__menu--center {
     margin-left: 0;

@@ -184,6 +184,65 @@ $(function () {
     });
   };
 
+  var ajaxButtonMore = function ajaxButtonMore() {
+    var page = 2;
+    $('.elements').data('loading', false);
+    $('.more-button').on('click', function () {
+      if (!$('.elements').data('loading') && (!$('.elements').data('last_load_page') || page != $('.elements').data('last_load_page'))) {
+        $('.elements').data('loading', true);
+        $('<div/>').load('/catalog/?page=' + page++ + ' .elements .element', function () {
+          $('.elements').append($(this).find('.element'));
+          $('.elements').data('last_load_page', page);
+          $('.elements').data('loading', false);
+        });
+      }
+    });
+  };
+
+  var fileUpload = function fileUpload() {
+    $('.file-upload__input').on('change', function () {
+      var $fileName = $(this).val().replace(/.*\\/, "");
+
+      if ($fileName) {
+        $(this).parent().prev().children().siblings('.file-upload__reset').show();
+      } else {
+        $(this).parent().prev().children().siblings('.file-upload__reset').hide();
+      }
+
+      $(this).parent().prev('.file-upload__top').children('.file-upload__name').text($fileName);
+      $(this).parents('.file-upload').addClass('file-added');
+    });
+    $('.file-upload__reset').on('click', function () {
+      $(this).siblings('.file-upload__label').children('.file-upload__input').val('');
+      $(this).next('.file-upload__name').text('');
+      $(this).hide();
+      $(this).parents('.file-upload').removeClass('file-added');
+    });
+  };
+
+  var taggleIcon = function taggleIcon(elem) {
+    var item = $(elem);
+    item.on('click', function (event) {
+      event.preventDefault();
+      var $this = $(this);
+      var countElem = $this.find('span');
+      var count = Number(countElem.text());
+
+      if ($this.hasClass('js-taggle-like')) {
+        $this.toggleClass('feed__comment-icon--active');
+
+        if ($this.hasClass('feed__comment-icon--active')) {
+          $this.find('use').attr('xlink:href', 'static/images/sprite/symbol/sprite.svg#heart-2');
+          countElem.text(++count);
+        } else {
+          $this.find('use').attr('xlink:href', 'static/images/sprite/symbol/sprite.svg#heart-1');
+          countElem.text(--count);
+        }
+      }
+    });
+  };
+
+  taggleIcon('.js-taggle');
   reviews();
   accordion();
   tabs('.slider__footer-link', '.slider__footer-content', 'slider__footer-item--current', 'slider__footer-content--active');
@@ -198,6 +257,8 @@ $(function () {
   tooltip();
   customSelect();
   dataLink('.table__body-row--link', 'data-href');
+  fileUpload();
+  ajaxButtonMore();
 });
 
 var lineChart = function lineChart() {

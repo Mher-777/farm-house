@@ -1,0 +1,77 @@
+.feed__inner
+    .feed__content
+        .feed__top
+            img(src="static/images/common/logo-user.png").feed__user
+            form(action="#").feed__top-form
+                .file-upload.feed__top-icon
+                    .file-upload__top
+                        .file-upload__reset
+                            +icon('close', 'file-upload__icon')
+                        .file-upload__name
+                    label.file-upload__label
+                        input.file-upload__input.file(type='file')
+                        span.file-upload__btn
+                            +icon('upload', 'file-upload__btn')
+                input(type="text" placeholder="Введите текст").feed__top-input.input
+        .feed__comment.feed__comment--line
+            .feed__comment-box
+                .feed__comment-head
+                    img(src="static/images/common/logo-user.png").feed__user.feed__user--position-absolute
+                    .feed__comment-info
+                        a(href="#").feed__comment-name.subtitle.subtitle--color-white Rick Deckard
+                        span.feed__comment-level.subtitle Уровень 55
+                    time(datetime="21 мая 2019, 20:00").feed__comment-day.subtitle 21 мая 2019, 20:00
+                .feed__comment-main
+                    p.feed__comment-text The Roobinium has successfully concluded 10 agreements with Supply Side Platforms for. The Roobinium has successfully concluded 10 agreements with Supply Side Platforms for.
+                .feed__comment-icons
+                    .feed__comment-icon.feed__comment-icon--active.js-taggle.js-taggle-like
+                        +icon('heart-2')
+                        span.feed__comment-count 14
+                    .feed__comment-icon.js-taggle.js-taggle-comment
+                        +icon('comment')
+                        span.feed__comment-count 1
+                    .feed__comment-icon.feed__comment-icon--left.js-delete
+                        +icon('delete')
+            .feed__comment-box
+                .feed__comment-head
+                    img(src="static/images/common/user-2.png").feed__user.feed__user--size-small
+                    .feed__comment-info
+                        a(href="#").feed__comment-name.subtitle.subtitle--color-white Hu Guiying
+                        span.feed__comment-level.subtitle Уровень 21
+                    time(datetime="21 мая 2019, 20:00").feed__comment-day.subtitle 21 мая 2019, 20:00
+                .feed__comment-main
+                    p.feed__comment-text What ad formats will roobinium support?
+                .feed__comment-icons
+                    .feed__comment-icon.js-taggle.js-taggle-like
+                        +icon('heart-1')
+                        span.feed__comment-count 2
+                    .feed__comment-icon.js-taggle.js-taggle-comment
+                        +icon('comment')
+                        span.feed__comment-count 0
+        .feed__comment
+            .feed__comment-box
+                .feed__comment-head
+                    img(src="static/images/common/logo-user.png").feed__user.feed__user--position-absolute
+                    .feed__comment-info
+                        a(href="#").feed__comment-name.subtitle.subtitle--color-white Rick Deckard
+                        span.feed__comment-level.subtitle Уровень 55
+                    time(datetime="21 мая 2019, 20:00").feed__comment-day.subtitle 21 мая 2019, 20:00
+                .feed__comment-main
+                    p.feed__comment-text The Roobinium has successfully concluded 10 agreements with Supply Side Platforms for. The Roobinium has successfully concluded 10 agreements with Supply Side Platforms for.
+                    .feed__comment-files
+                        a(href="#" download="#").feed__comment-file.link
+                            +icon('file', 'feed__comment-file-icon')
+                            span.feed__comment-count Screen01
+                        a(href="#" download="#").feed__comment-file.link
+                            +icon('file', 'feed__comment-file-icon')
+                            span.feed__comment-count Screen02
+                .feed__comment-icons
+                    .feed__comment-icon.js-taggle.js-taggle-like
+                        +icon('heart-1')
+                        span.feed__comment-count 5
+                    .feed__comment-icon.js-taggle.js-taggle-comment
+                        +icon('comment')
+                        span.feed__comment-count 0
+                    .feed__comment-icon.feed__comment-icon--left.js-delete
+                        +icon('delete')
+    button(type="button").feed__btn.link.link--size-small.link--color-white Показать больше

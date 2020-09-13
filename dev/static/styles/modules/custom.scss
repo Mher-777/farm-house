@@ -156,3 +156,39 @@ span.select2-selection.select2-selection--single {
 .select2-container--default .select2-selection--single .select2-selection__placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
+.file{
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  &-upload{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    &__icon {
+      fill: var(--color-gray-neutral);
+    }
+    &__reset{
+      display: none;
+      text-align: center;
+      line-height: 15px;
+      top: 4px;
+      right: -10px;
+    }
+    &__name {
+      white-space: nowrap;
+      max-width: 100px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      color: rgba(255, 255, 255, 0.5);
+      margin-left: 5px;
+    }
+    &__btn{
+      cursor: pointer;
+      &-text{
+        cursor: pointer;
+      }
+    }
+  }
+}
