@@ -1,0 +1,10 @@
+extends layout/office
+
+block variables
+    -var title = 'Друзья'
+block content
+    section.friends.office-section
+        .container
+            h2.title.title--size-medium.friends__title(data-count="67") Друзья
+            include pages/friends
+            button.friends__btn.link.link--size-small.link--color-white Показать больше

@@ -242,6 +242,22 @@ $(function () {
     });
   };
 
+  var copyText = function copyText() {
+    var copyInput = $('.js-copy');
+    copyInput.on('click', function (event) {
+      $(this).focus();
+      $(this).select();
+
+      try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? 'successful' : 'unsuccessful';
+        console.log('Copying text command was ' + msg);
+      } catch (err) {
+        console.log('Oops, unable to copy');
+      }
+    });
+  };
+
   taggleIcon('.js-taggle');
   reviews();
   accordion();
@@ -259,6 +275,7 @@ $(function () {
   dataLink('.table__body-row--link', 'data-href');
   fileUpload();
   ajaxButtonMore();
+  copyText();
 });
 
 var lineChart = function lineChart() {

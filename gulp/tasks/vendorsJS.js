@@ -10,6 +10,7 @@ const vendorsScripts = [
   'node_modules/chart.js/dist/Chart.js',
   'node_modules/select2/dist/js/select2.js',
   'dev/static/js/vendor/tippy.js',
+  // 'node_modules/clipboard/dist/clipboard.js',
 ];
 
 module.exports = function vendors(cb) {

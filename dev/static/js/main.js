@@ -232,6 +232,20 @@ $(function () {
             }
         })
     }
+    const copyText = () => {
+        let copyInput = $('.js-copy');
+        copyInput.on('click', function(event) {
+            $(this).focus();
+            $(this).select();
+            try {
+                let successful = document.execCommand('copy');
+                let msg = successful ? 'successful' : 'unsuccessful';
+                console.log('Copying text command was ' + msg);
+            } catch (err) {
+                console.log('Oops, unable to copy');
+            }
+        });
+    }
     taggleIcon('.js-taggle')
     reviews()
     accordion()
@@ -249,6 +263,7 @@ $(function () {
     dataLink('.table__body-row--link', 'data-href')
     fileUpload()
     ajaxButtonMore()
+    copyText()
 })
 const lineChart = () => {
     let ctx = document.getElementById('line-chart')

@@ -17,6 +17,21 @@
     line-height: 22px;
     margin-right: 5px;
   }
+  &__main {
+    &-col {
+      &:last-child {
+        margin-bottom: -15px;
+      }
+    }
+    &-subtitle {
+      font-size: 13px;
+      line-height: 16px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-left: 15px;
+      margin-bottom: 8px;
+      display: block;
+    }
+  }
   &__list {
     &-item {
       display: flex;
@@ -46,6 +61,12 @@
     margin-bottom: 15px;
     &::placeholder {
       color: rgba(255, 255, 255, 0.6);
+    }
+    &--value {
+      color: rgba(255, 255, 255, 0.6);
+      &::after {
+        content: attr(data-subtitle);
+      }
     }
   }
   &__btn {

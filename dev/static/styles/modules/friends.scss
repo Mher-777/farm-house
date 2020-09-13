@@ -1,0 +1,169 @@
+.friends {
+  padding-right: 380px;
+  margin-left: 380px;
+  padding-bottom: 115px;
+  &__title {
+    &::after {
+      content: attr(data-count);
+      color: rgba(255, 255, 255, 0.6);
+      display: inline-block;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+  }
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: self-start;
+    margin-right: -380px;
+    margin-left: -30px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+  }
+  &__col {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.0001) 98.53%);
+    box-shadow: 0px 0px 1px rgba(24, 26, 59, 0.12), 0px 2px 4px -1px rgba(24, 26, 59, 0.12), 0px 8px 8px -4px rgba(24, 26, 59, 0.06);
+    border-radius: 24px;
+    padding: 25px;
+    position: relative;
+    width: 100%;
+    max-width: calc(25% - 30px);
+    margin-left: 30px;
+    margin-bottom: 30px;
+    &--block {
+      display: block;
+    }
+    display: flex;
+    align-items: center;
+    margin-top: -110px;
+    &:nth-child(-n+5){
+      margin-top: 0;
+    }
+    &:nth-child(4n+4) {
+      & + .friends__col {
+        margin-top: 0;
+      }
+    }
+    &-user {
+      max-width: 95px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-right: 25px;
+      object-fit: cover;
+    }
+    &-icons {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+    &-link {
+      margin-right: 10px;
+      display: inline-block;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &-icon {
+      fill: rgba(255, 255, 255, 0.4);
+      transition: all linear .2s;
+      &:hover {
+        fill: var(--color-red)
+      }
+    }
+    &-name {
+      margin-bottom: 5px;
+    }
+  }
+}
+@media (max-width: 1900px) {
+  .friends {
+    padding-right: 0;
+    margin-left: 0;
+    &__inner {
+      margin-right: 0;
+      margin-left: -22px;
+    }
+    &__col {
+      max-width: calc(33.333333% - 22px);
+      margin-left: 22px;
+      &:nth-child(-n+5){
+        margin-top: initial;
+      }
+      &:nth-child(-n+3){
+        margin-top: 0;
+      }
+      &:nth-child(4n+4) {
+        & + .friends__col {
+          margin-top: -110px;
+        }
+      }
+      &:nth-child(3n+3) {
+        & + .friends__col {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1100px) {
+  .friends__inner {
+    margin-left: -10px;
+  }
+  .friends__col {
+    padding: 15px;
+    margin-top: -140px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    max-width: calc(33.333333% - 10px);
+    &-user {
+      max-width: 70px;
+      margin-right: 10px;
+    }
+    &-name {
+      font-size: 16px;
+      line-height: 20px;
+      padding-right: 60px;
+    }
+  }
+  .friends__col:nth-child(4n+4) + .friends__col {
+    margin-top: -140px;
+  }
+}
+@media (max-width: 992px) {
+  .friends__col {
+    max-width: calc(50% - 10px);
+    margin-top: 0;
+  }
+  .friends__col:nth-child(4n+4) + .friends__col {
+    margin-top: 0;
+  }
+  .friends__col:nth-child(odd) + .friends__col {
+    margin-top: -115px;
+  }
+  .friends__col:nth-child(1) {
+    & + .friends__col {
+      margin-top: 0;
+    }
+  }
+}
+@media (max-width: 650px) {
+  .friends__inner {
+    margin-left: 0;
+  }
+  .friends__col {
+    max-width: 100%;
+    margin-bottom: 20px;
+    margin-left: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .friends__col:nth-child(odd) + .friends__col {
+    margin-top: 0;
+  }
+}
+@media (max-width: 555px) {
+  .friends__inner {
+    margin-top: 25px;
+  }
+}
