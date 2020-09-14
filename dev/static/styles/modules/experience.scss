@@ -1,0 +1,29 @@
+.experience {
+  padding-bottom: 115px;
+  &__inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  &__col {
+    margin-top: 20px;
+    &:not(:first-child){
+      margin-left: 30px;
+    }
+  }
+  &__title {
+    &::after {
+      content: attr(data-count);
+      color: rgba(255, 255, 255, 0.6);
+      display: inline-block;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+  }
+}
+@media (max-width: 555px) {
+  .experience__inner {
+    margin-top: 5px;
+  }
+}

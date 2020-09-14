@@ -1,0 +1,21 @@
+extends layout/office
+
+block variables
+    -var title = 'Биржа опыта'
+block content
+    section.experience.office-section
+        .container
+            h2.title.title--size-medium.experience__title(data-count="67 ед.") Биржа опыта
+            .experience__inner
+                .experience__col.box
+                    form(action="#").box__form
+                        .box__top
+                            h3.box__title Обменять
+                            span.info-icon(data-tippy-content="<span class='tooltip'>На бирже опыта Вы можете обменять купленную продукцию и энергию на опыт. На данный момент можно обменять тесто на опыт У вас в наличии 0 ед.\n" +
+                            "                        \n" +
+                            "                        Курс обмена: продукт и 15 энергии = 10 опыта.</span>")
+                                +icon('info')
+                        .box__main
+                            input(type="text" placeholder="Количество" required data-inputmask="'mask': '9999', 'placeholder': ' '").box__input.input
+                        .box__bottom
+                            button(type="submit").box__btn.link.link--color-white Обменять

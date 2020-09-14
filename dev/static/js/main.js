@@ -246,6 +246,7 @@ $(function () {
             }
         });
     }
+    $("input[data-inputmask]").inputmask();
     taggleIcon('.js-taggle')
     reviews()
     accordion()

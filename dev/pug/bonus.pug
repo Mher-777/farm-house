@@ -1,0 +1,104 @@
+extends layout/office
+
+block variables
+    -var title = 'Бонус'
+block content
+    section.bonus.office-section
+        .container
+            h2.title.title--size-medium.bonus__title Бонус
+            .bonus__inner
+                .bonus__col.box
+                    form(action="#").box__form
+                        .box__top
+                            h3.box__title Получить бонус
+                            span.info-icon(data-tippy-content="<span class='tooltip'>Каждый час вы можете получать бонус на баланс оплаты в размере 0.03 руб. При сборе бонусов у вас списывается 2 ед энергии. Резерв бонусов: 99.91 руб. <a href='#'>Пополнить</a></span>")
+                                +icon('info')
+                        .box__main
+                            .box__main-row
+                                img(src="static/images/common/captcha.png").box__main-image
+                                input(type="text" required data-inputmask="'mask': '9999', 'placeholder': ' '").box__input.box__input--margin.input
+                        .box__bottom
+                            button(type="submit").box__btn.link.link--color-white Получить
+                .bonus__col(data-simplebar).box.box--size-big.box--padding
+                    .box__top
+                        h3.box__title Последние 10 полученных бонусов
+                    table.bonus__table.table.table--transparent
+                        thead.table__head
+                            tr.table__head-row
+                                td.table__head-title.table__head-title--border
+                                    span.table__head-text Фермер
+                                td.table__head-title.table__head-title--border
+                                    span.table__head-text Дата
+                                td.table__head-title.table__head-title--border
+                                    span.table__head-text Сумма
+                        tbody.table__body
+                            tr.table__body-row.table__body-row--link.table__body-row--nowrap(data-href="https://vk.com/im")
+                                td.table__body-col
+                                    span.table__body-text Santiago Valentín
+                                td.table__body-col
+                                    span.table__body-text.table__body-text--color-gray 01:02:05 24:08:2019
+                                td.table__body-col
+                                    span.table__body-number.table__body-number--color-gray 13 650
+                            tr.table__body-row.table__body-row--link.table__body-row--nowrap(data-href="https://vk.com/im")
+                                td.table__body-col
+                                    span.table__body-text Santiago Valentín
+                                td.table__body-col
+                                    span.table__body-text.table__body-text--color-gray 01:02:05 24:08:2019
+                                td.table__body-col
+                                    span.table__body-number.table__body-number--color-gray 13 650
+                            tr.table__body-row.table__body-row--link.table__body-row--nowrap(data-href="https://vk.com/im")
+                                td.table__body-col
+                                    span.table__body-text Santiago Valentín
+                                td.table__body-col
+                                    span.table__body-text.table__body-text--color-gray 01:02:05 24:08:2019
+                                td.table__body-col
+                                    span.table__body-number.table__body-number--color-gray 13 650
+                            tr.table__body-row.table__body-row--link.table__body-row--nowrap(data-href="https://vk.com/im")
+                                td.table__body-col
+                                    span.table__body-text Santiago Valentín
+                                td.table__body-col
+                                    span.table__body-text.table__body-text--color-gray 01:02:05 24:08:2019
+                                td.table__body-col
+                                    span.table__body-number.table__body-number--color-gray 13 650
+                            tr.table__body-row.table__body-row--link.table__body-row--nowrap(data-href="https://vk.com/im")
+                                td.table__body-col
+                                    span.table__body-text Santiago Valentín
+                                td.table__body-col
+                                    span.table__body-text.table__body-text--color-gray 01:02:05 24:08:2019
+                                td.table__body-col
+                                    span.table__body-number.table__body-number--color-gray 13 650
+                            tr.table__body-row.table__body-row--link.table__body-row--nowrap(data-href="https://vk.com/im")
+                                td.table__body-col
+                                    span.table__body-text Santiago Valentín
+                                td.table__body-col
+                                    span.table__body-text.table__body-text--color-gray 01:02:05 24:08:2019
+                                td.table__body-col
+                                    span.table__body-number.table__body-number--color-gray 13 650
+                            tr.table__body-row.table__body-row--link.table__body-row--nowrap(data-href="https://vk.com/im")
+                                td.table__body-col
+                                    span.table__body-text Santiago Valentín
+                                td.table__body-col
+                                    span.table__body-text.table__body-text--color-gray 01:02:05 24:08:2019
+                                td.table__body-col
+                                    span.table__body-number.table__body-number--color-gray 13 650
+                            tr.table__body-row.table__body-row--link.table__body-row--nowrap(data-href="https://vk.com/im")
+                                td.table__body-col
+                                    span.table__body-text Santiago Valentín
+                                td.table__body-col
+                                    span.table__body-text.table__body-text--color-gray 01:02:05 24:08:2019
+                                td.table__body-col
+                                    span.table__body-number.table__body-number--color-gray 13 650
+                            tr.table__body-row.table__body-row--link.table__body-row--nowrap(data-href="https://vk.com/im")
+                                td.table__body-col
+                                    span.table__body-text Santiago Valentín
+                                td.table__body-col
+                                    span.table__body-text.table__body-text--color-gray 01:02:05 24:08:2019
+                                td.table__body-col
+                                    span.table__body-number.table__body-number--color-gray 13 650
+                            tr.table__body-row.table__body-row--link.table__body-row--nowrap(data-href="https://vk.com/im")
+                                td.table__body-col
+                                    span.table__body-text Santiago Valentín
+                                td.table__body-col
+                                    span.table__body-text.table__body-text--color-gray 01:02:05 24:08:2019
+                                td.table__body-col
+                                    span.table__body-number.table__body-number--color-gray 13 650

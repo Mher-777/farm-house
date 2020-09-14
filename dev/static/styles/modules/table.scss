@@ -4,6 +4,11 @@
   border-radius: 24px;
   padding: 15px 0;
   width: 100%;
+  &--transparent {
+    background: transparent;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   &__head {
     &-row {
       & > * {
@@ -19,6 +24,9 @@
       font-size: 14px;
       line-height: 16px;
       padding-bottom: 20px;
+      &--border {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
     }
     &-text {
       &--align {
@@ -38,19 +46,22 @@
       margin-right: 5px;
     }
     &-row {
+      border-radius: 24px;
       &--link {
         cursor: pointer;
         transition: all linear .2s;
         & > * {
           &:last-child {
             padding-right: 25px;
+            border-radius: 0 24px 24px 0;
           }
           &:first-child {
             padding-left: 25px;
+            border-radius: 24px 0 0 24px;
           }
         }
         &:hover {
-          background-color: rgba(#fff, .2);
+          background-color: rgba(255, 255, 255, 0.06);
         }
       }
       &--nowrap {
@@ -60,6 +71,12 @@
     &-text{
       font-size: 14px;
       line-height: 16px;
+      &--color {
+        &-gray {
+          color: rgba(255, 255, 255, 0.6);
+
+        }
+      }
     }
     &-col {
       padding: 12px 0;
