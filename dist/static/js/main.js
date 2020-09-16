@@ -258,7 +258,11 @@ $(function () {
     });
   };
 
-  $("input[data-inputmask]").inputmask();
+  var inputMask = function inputMask() {
+    $("input[data-inputmask]").inputmask();
+  };
+
+  inputMask();
   taggleIcon('.js-taggle');
   reviews();
   accordion();

@@ -246,7 +246,10 @@ $(function () {
             }
         });
     }
-    $("input[data-inputmask]").inputmask();
+    const inputMask = () => {
+        $("input[data-inputmask]").inputmask();
+    }
+    inputMask()
     taggleIcon('.js-taggle')
     reviews()
     accordion()
